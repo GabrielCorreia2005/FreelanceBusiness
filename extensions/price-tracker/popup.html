@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Price Tracker</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="6" fill="url(#g)" />
+                    <path d="M12 6v6l4 2" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <circle cx="12" cy="12" r="7" stroke="white" stroke-width="2" fill="none" />
+                    <defs>
+                        <linearGradient id="g" x1="0" y1="0" x2="24" y2="24">
+                            <stop stop-color="#10b981" />
+                            <stop offset="1" stop-color="#059669" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>Price Tracker</h1>
+            </div>
+        </header>
+
+        <!-- Add current page -->
+        <div class="add-section" id="addSection">
+            <div class="current-page" id="currentPageInfo">
+                <div class="page-title" id="pageTitle">Detecting price...</div>
+                <div class="detected-price" id="detectedPrice"></div>
+            </div>
+            <div class="target-row">
+                <div class="input-group">
+                    <label>Target price (€/$)</label>
+                    <input type="number" id="targetPrice" placeholder="0.00" step="0.01" min="0">
+                </div>
+                <div class="input-group">
+                    <label>Check every</label>
+                    <select id="checkInterval">
+                        <option value="60">1h</option>
+                        <option value="360">6h</option>
+                        <option value="720" selected>12h</option>
+                        <option value="1440">24h</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-primary full-width" id="trackBtn" disabled>🔍 Track This Page</button>
+        </div>
+
+        <!-- Tracked items -->
+        <div class="tracked-section">
+            <div class="section-header">
+                <h2>Tracked (<span id="trackedCount">0</span>)</h2>
+                <button class="text-btn" id="checkAllBtn">Check now</button>
+            </div>
+            <div id="trackedList" class="tracked-list">
+                <div class="empty-state">No items tracked yet</div>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
