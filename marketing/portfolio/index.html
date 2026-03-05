@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Developer & Automation Engineer — Portfolio</title>
+    <meta name="description"
+        content="I build AI chatbots, REST APIs, Chrome Extensions and automation workflows that save businesses time and money. Hire me on Fiverr or Upwork.">
+    <meta property="og:title" content="AI Automation Engineer Portfolio">
+    <meta property="og:description"
+        content="Custom AI chatbots, APIs, Chrome Extensions & automation workflows. Fast delivery, real results.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ─── Reset & Base ─────────────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #060913;
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.07);
+            --text: #e2e8f0;
+            --muted: #64748b;
+            --accent: #6366f1;
+            --accent2: #8b5cf6;
+            --green: #10b981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ─── Background ───────────────────────────────────────── */
+        .bg-glow {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse at 15% 40%, rgba(99, 102, 241, 0.12) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 15%, rgba(139, 92, 246, 0.09) 0%, transparent 55%),
+                radial-gradient(ellipse at 60% 85%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ─── Nav ──────────────────────────────────────────────── */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            border: none;
+            padding: 9px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+        }
+
+        /* ─── Hero ─────────────────────────────────────────────── */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            color: #a78bfa;
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #a78bfa, #60a5fa, var(--green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 36px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-ghost {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* ─── Stats ────────────────────────────────────────────── */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        /* ─── Section ──────────────────────────────────────────── */
+        section {
+            max-width: 1100px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(26px, 4vw, 36px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .section-desc {
+            color: var(--muted);
+            max-width: 520px;
+            margin-bottom: 40px;
+        }
+
+        /* ─── Services ─────────────────────────────────────────── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+        }
+
+        .service-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 11px;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .price-note {
+            font-size: 13px;
+            color: var(--green);
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* ─── Products ─────────────────────────────────────────── */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 14px;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.2s;
+        }
+
+        .product-card:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .product-type {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .product-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .product-card p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .product-badge {
+            display: inline-block;
+            font-size: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--green);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 2px 8px;
+            border-radius: 50px;
+            margin-top: 10px;
+        }
+
+        /* ─── Process ──────────────────────────────────────────── */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+        }
+
+        .step {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .step-num {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent);
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .step h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .step p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ─── CTA ──────────────────────────────────────────────── */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            border-radius: 24px;
+            padding: 60px 32px;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .cta-section p {
+            color: var(--muted);
+            font-size: 17px;
+            margin-bottom: 32px;
+        }
+
+        .cta-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ─── Footer ───────────────────────────────────────────── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 40px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ─── Scroll animation ─────────────────────────────────── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <div class="content">
+
+        <!-- Nav -->
+        <nav>
+            <div class="logo">⚡ AI Dev</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#process">How it works</a></li>
+            </ul>
+            <a href="https://fiverr.com" class="nav-cta">Hire Me →</a>
+        </nav>
+
+        <!-- Hero -->
+        <div class="hero fade-in">
+            <div class="hero-badge">🤖 AI • APIs • Chrome Extensions • Automation</div>
+            <h1>I build tools that<br><span class="gradient-text">work while you sleep</span></h1>
+            <p>Custom AI chatbots, REST APIs, Chrome Extensions and automation workflows. Delivered fast. Built right.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://fiverr.com" class="btn-primary">View on Fiverr</a>
+                <a href="https://upwork.com" class="btn-ghost">View on Upwork</a>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats fade-in">
+            <div class="stat">
+                <div class="stat-num">7+</div>
+                <div class="stat-label">APIs Published</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">3</div>
+                <div class="stat-label">Chrome Extensions</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">48h</div>
+                <div class="stat-label">Avg. Delivery</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">5★</div>
+                <div class="stat-label">Quality Guarantee</div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <section id="services">
+            <div class="section-label fade-in">What I Do</div>
+            <h2 class="section-title fade-in">Services</h2>
+            <p class="section-desc fade-in">Everything you need to automate, build, and scale with AI. Fast turnaround,
+                no fluff.</p>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Chatbots</h3>
+                    <p>GPT-4 powered bots for customer support, lead capture, and internal Q&A. Integrates with
+                        WhatsApp, Telegram, Slack, websites.</p>
+                    <div class="service-tags">
+                        <span class="tag">OpenAI</span><span class="tag">GPT-4</span><span
+                            class="tag">WhatsApp</span><span class="tag">Telegram</span>
+                    </div>
+                    <div class="price-note">From $150</div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">⚡</div>
+                    <h3>Custom REST APIs</h3>
+                    <p>Production-ready APIs deployed to Railway or your server. Authentication, rate limiting,
+                        documentation included.</p>
+                    <div class="service-tags">
+                        <span class="tag">Node.js</span><span class="tag">Express</span><span
+                            class="tag">MongoDB</span><span class="tag">RapidAPI</span>
+                    </div>
+                    <div class="price-note">From $150</div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🧩</div>
+                    <h3>Chrome Extensions</h3>
+                    <p>Browser tools that automate tasks, extract data, enhance any site. Manifest V3, ready for Chrome
+                        Web Store.</p>
+                    <div class="service-tags">
+                        <span class="tag">Manifest V3</span><span class="tag">Content Scripts</span><span
+                            class="tag">Background Workers</span>
+                    </div>
+                    <div class="price-note">From $100</div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔄</div>
+                    <h3>Automation Workflows</h3>
+                    <p>Connect your tools, automate repetitive processes. Works with Zapier, Make, n8n, or custom
+                        scripting.</p>
+                    <div class="service-tags">
+                        <span class="tag">n8n</span><span class="tag">Make</span><span class="tag">Zapier</span><span
+                            class="tag">Webhooks</span>
+                    </div>
+                    <div class="price-note">From $100</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products -->
+        <section id="products">
+            <div class="section-label fade-in">Live Products</div>
+            <h2 class="section-title fade-in">APIs & Extensions</h2>
+            <p class="section-desc fade-in">These are already built, tested, and ready. I can build something like this
+                for you in days.</p>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-type">REST API</div>
+                    <h4>Password Generator API</h4>
+                    <p>Strong passwords, passphrases, strength scoring, bulk generation.</p>
+                    <span class="product-badge">✓ Live on RapidAPI</span>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-type">REST API</div>
+                    <h4>URL Shortener API</h4>
+                    <p>Custom short codes, click tracking, expiry dates, analytics dashboard.</p>
+                    <span class="product-badge">✓ Live on RapidAPI</span>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-type">REST API</div>
+                    <h4>Text Summarizer API</h4>
+                    <p>Extractive summarization, keyword extraction, readability analysis.</p>
+                    <span class="product-badge">✓ Live on RapidAPI</span>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-type">REST API</div>
+                    <h4>Sentiment Analysis API</h4>
+                    <p>VADER-like scoring, negation handling, emotion detection, batch mode.</p>
+                    <span class="product-badge">✓ Live on RapidAPI</span>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-type">REST API</div>
+                    <h4>Currency Converter API</h4>
+                    <p>40+ currencies, live rates, batch conversions, offline fallback.</p>
+                    <span class="product-badge">✓ Live on RapidAPI</span>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-type">Chrome Extension</div>
+                    <h4>AI Page Summary</h4>
+                    <p>Summarize any web page instantly. Keywords, reading time, one-click copy.</p>
+                    <span class="product-badge">✓ Chrome Web Store</span>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-type">Chrome Extension</div>
+                    <h4>Focus Tab Dashboard</h4>
+                    <p>Replace new tab with productivity hub: tasks, Pomodoro, quotes, quick links.</p>
+                    <span class="product-badge">✓ Chrome Web Store</span>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-type">Chrome Extension</div>
+                    <h4>Price Tracker</h4>
+                    <p>Track prices on Amazon & more. Alerts when target price is reached.</p>
+                    <span class="product-badge">✓ Chrome Web Store</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section id="process">
+            <div class="section-label fade-in">How It Works</div>
+            <h2 class="section-title fade-in">Simple process, fast delivery</h2>
+            <p class="section-desc fade-in">I keep it simple — no endless meetings, no bloated scope. Just results.</p>
+            <div class="process-steps">
+                <div class="step fade-in">
+                    <div class="step-num">01</div>
+                    <div>
+                        <h4>Tell me what you need</h4>
+                        <p>Message me with your idea. I'll scope it and give you an honest quote within hours.</p>
+                    </div>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-num">02</div>
+                    <div>
+                        <h4>I build it</h4>
+                        <p>I get to work immediately. Most projects delivered in 1-5 days — not weeks.</p>
+                    </div>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-num">03</div>
+                    <div>
+                        <h4>You get working code</h4>
+                        <p>Deployed, tested, documented. You can run it immediately.</p>
+                    </div>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-num">04</div>
+                    <div>
+                        <h4>I support you</h4>
+                        <p>7 days post-delivery support. I won't disappear after payment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section>
+            <div class="cta-section fade-in">
+                <h2>Ready to build something?</h2>
+                <p>Tell me your idea — I'll scope it and deliver fast.</p>
+                <div class="cta-links">
+                    <a href="https://fiverr.com" class="btn-primary">Hire on Fiverr</a>
+                    <a href="https://upwork.com" class="btn-ghost">Hire on Upwork</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Built by an AI Automation Engineer. All APIs & extensions available on Fiverr and Upwork.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Scroll fade-in animation
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
