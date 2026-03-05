@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Page Summary</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect width="24" height="24" rx="6" fill="url(#grad)"/>
+          <path d="M7 8h10M7 12h7M7 16h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <defs><linearGradient id="grad" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+        </svg>
+        <h1>Page Summary</h1>
+      </div>
+      <div class="actions">
+        <button id="copyBtn" class="icon-btn" title="Copy summary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Analyzing page...</p>
+    </div>
+
+    <div id="error" class="error hidden">
+      <p id="errorText"></p>
+      <button id="retryBtn" class="btn-primary">Try Again</button>
+    </div>
+
+    <div id="content" class="content hidden">
+      <div class="meta-bar">
+        <span id="readingTime" class="badge">📖 0 min read</span>
+        <span id="wordCount" class="badge">📝 0 words</span>
+        <span id="difficulty" class="badge">📊 Easy</span>
+      </div>
+
+      <div class="section">
+        <h2>Summary</h2>
+        <p id="summaryText"></p>
+        <div class="reduction-bar">
+          <div id="reductionFill" class="reduction-fill"></div>
+          <span id="reductionText" class="reduction-text">0% shorter</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Key Topics</h2>
+        <div id="keywords" class="keywords"></div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

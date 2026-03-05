@@ -1,0 +1,13 @@
+{
+    "name": "url-shortener-api",
+    "version": "1.0.0",
+    "description": "URL shortener with click tracking and analytics",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "nanoid": "^3.3.7"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "AI Page Summary",
+    "version": "1.0.0",
+    "description": "Instantly summarize any web page with AI-powered extractive summarization. Get key points, keywords, and reading time in one click.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }
+}
