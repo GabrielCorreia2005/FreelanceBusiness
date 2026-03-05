@@ -1,0 +1,56 @@
+# Render.com Blueprint — deploys 4 APIs as Web Services
+# Usage: Go to https://render.com/deploy → New Blueprint → connect GitHub repo
+# Render automatically reads this file from repo root
+
+services:
+  - type: web
+    name: sentiment-analysis-api
+    runtime: node
+    rootDir: apis/sentiment-analysis-api
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: API_KEY
+        value: gc-api-key-2026-secure
+      - key: PORT
+        value: 3000
+    plan: free
+
+  - type: web
+    name: currency-converter-api
+    runtime: node
+    rootDir: apis/currency-converter-api
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: API_KEY
+        value: gc-api-key-2026-secure
+      - key: PORT
+        value: 3000
+    plan: free
+
+  - type: web
+    name: web-scraper-api
+    runtime: node
+    rootDir: apis/web-scraper-api
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: API_KEY
+        value: gc-api-key-2026-secure
+      - key: PORT
+        value: 3000
+    plan: free
+
+  - type: web
+    name: pdf-generator-api
+    runtime: node
+    rootDir: apis/pdf-generator-api
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: API_KEY
+        value: gc-api-key-2026-secure
+      - key: PORT
+        value: 3000
+    plan: free
