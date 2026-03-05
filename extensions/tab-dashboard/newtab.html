@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Tab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="newtab.css">
+</head>
+
+<body>
+    <div class="bg-overlay" id="bgOverlay"></div>
+
+    <div class="app">
+        <!-- Top bar -->
+        <div class="topbar">
+            <div class="date-display" id="dateDisplay"></div>
+            <button class="settings-btn" id="settingsBtn" title="Settings">⚙️</button>
+        </div>
+
+        <!-- Clock + Greeting -->
+        <section class="hero">
+            <div class="clock" id="clock">00:00</div>
+            <div class="greeting" id="greeting">Good morning</div>
+            <div class="focus-input-wrap">
+                <input type="text" class="focus-input" id="focusInput" placeholder="What is your main focus today?"
+                    maxlength="100">
+            </div>
+        </section>
+
+        <!-- Stats bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-value" id="tasksCompleted">0</span>
+                <span class="stat-label">Done today</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-value" id="tasksPending">0</span>
+                <span class="stat-label">Remaining</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-value" id="streakCount">0</span>
+                <span class="stat-label">Day streak</span>
+            </div>
+        </div>
+
+        <!-- Main grid -->
+        <div class="grid">
+            <!-- Tasks panel -->
+            <div class="card" id="tasksPanel">
+                <div class="card-header">
+                    <h2>📋 Tasks</h2>
+                    <button class="add-btn" id="addTaskBtn">+ Add</button>
+                </div>
+                <div class="add-form hidden" id="addTaskForm">
+                    <input type="text" class="task-input" id="taskInput" placeholder="New task..." maxlength="80">
+                    <button class="btn-sm btn-primary" id="saveTaskBtn">Add</button>
+                </div>
+                <ul class="task-list" id="taskList">
+                    <li class="empty-state">No tasks yet — add one above ☝️</li>
+                </ul>
+            </div>
+
+            <!-- Quote panel -->
+            <div class="card" id="quotePanel">
+                <div class="card-header">
+                    <h2>💡 Today's Quote</h2>
+                    <button class="refresh-btn" id="refreshQuoteBtn" title="New quote">↻</button>
+                </div>
+                <blockquote class="quote" id="quoteText"></blockquote>
+                <cite class="quote-author" id="quoteAuthor"></cite>
+            </div>
+
+            <!-- Quick links panel -->
+            <div class="card" id="linksPanel">
+                <div class="card-header">
+                    <h2>🔗 Quick Links</h2>
+                    <button class="add-btn" id="addLinkBtn">+ Add</button>
+                </div>
+                <div class="add-form hidden" id="addLinkForm">
+                    <input type="text" class="task-input" id="linkNameInput" placeholder="Name" maxlength="30">
+                    <input type="url" class="task-input" id="linkUrlInput" placeholder="https://..."
+                        style="margin-top:4px">
+                    <button class="btn-sm btn-primary" id="saveLinkBtn">Add</button>
+                </div>
+                <div class="links-grid" id="linksList"></div>
+            </div>
+
+            <!-- Pomodoro timer panel -->
+            <div class="card" id="pomodoroPanel">
+                <div class="card-header">
+                    <h2>🍅 Pomodoro</h2>
+                    <span class="pomodoro-count"><span id="pomodoroCount">0</span> done</span>
+                </div>
+                <div class="pomodoro-circle-wrap">
+                    <svg class="pomodoro-ring" viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="52" />
+                        <circle class="ring-fill" id="pomodoroRing" cx="60" cy="60" r="52" stroke-dasharray="327"
+                            stroke-dashoffset="0" />
+                    </svg>
+                    <div class="pomodoro-time" id="pomodoroTime">25:00</div>
+                </div>
+                <div class="pomodoro-controls">
+                    <button class="btn-sm" id="pomodoroModeBtn">Focus</button>
+                    <button class="btn-sm btn-primary" id="pomodoroStartBtn">▶ Start</button>
+                    <button class="btn-sm" id="pomodoroResetBtn">↺ Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="newtab.js"></script>
+</body>
+
+</html>
