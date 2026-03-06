@@ -46,7 +46,7 @@ Empresas semelhantes já poupam 15-20 horas por semana com sistemas que eu imple
 Posso fazer uma análise gratuita de 10 minutos para mostrar exactamente o que pode ser automatizado no caso da {company}?
 
 Cumprimentos,
-[O teu nome]
+Gabriel Correia\nPulso Digital
 
 P.S. Não há chamadas necessárias — toda a comunicação pode ser por email ou WhatsApp se preferir."""
     },
@@ -62,7 +62,7 @@ A maioria dos meus clientes poupa 2-3 horas por dia sem qualquer custo de staff 
 Posso enviar-lhe um resumo de como funcionaria especificamente para a {company}?
 
 Cumprimentos,
-[O teu nome]"""
+Gabriel Correia\nPulso Digital"""
     },
 
     "agency": {
@@ -76,7 +76,7 @@ Os meus clientes típicos poupam 20+ horas/semana que a equipa gastava em tarefa
 Posso fazer uma análise grátis dos processos da {company} que têm maior potencial de automação?
 
 Cumprimentos,
-[O teu nome]"""
+Gabriel Correia\nPulso Digital"""
     }
 }
 
