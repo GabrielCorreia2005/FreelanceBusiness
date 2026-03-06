@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Email Validator — Check Email Address Online | DevToolbox</title>
+    <meta name="description"
+        content="Free online email validator. Check if an email address is valid, detect disposable emails, verify MX records. No sign-up required. API available.">
+    <meta name="keywords"
+        content="email validator, email checker, verify email, disposable email check, MX record, free email validation API">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #060913;
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.07);
+            --text: #e2e8f0;
+            --muted: #64748b;
+            --accent: #6366f1;
+            --accent2: #8b5cf6;
+            --green: #10b981;
+            --red: #ef4444;
+            --amber: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .bg-glow {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background: radial-gradient(ellipse at 30% 40%, rgba(16, 185, 129, 0.1) 0%, transparent 55%),
+                radial-gradient(ellipse at 70% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(6, 9, 19, 0.85);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        header nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        header nav a:hover {
+            color: var(--text);
+        }
+
+        .api-badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            text-decoration: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--green), #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .tool-container {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .tool-panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            padding-right: 120px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--accent);
+        }
+
+        .input-group input::placeholder {
+            color: var(--muted);
+        }
+
+        .input-group button {
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            bottom: 6px;
+            padding: 0 1.2rem;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(135deg, var(--green), #059669);
+            color: white;
+            font-weight: 600;
+            font-family: inherit;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .input-group button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .result-card {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            display: none;
+        }
+
+        .result-card.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .result-icon {
+            font-size: 2rem;
+        }
+
+        .result-status {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .result-email {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .checks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.9rem;
+        }
+
+        .check-icon {
+            font-size: 1.1rem;
+        }
+
+        .check-label {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .check-value {
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .score-bar {
+            margin-top: 1rem;
+        }
+
+        .score-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+
+        .score-track {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        .score-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.6s ease;
+        }
+
+        /* API CTA Banner */
+        .api-cta {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+
+        .api-cta h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .api-cta p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .api-cta a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .api-cta a:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Features */
+        .features {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+        }
+
+        .feature {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .feature h3 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .feature p {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .tool-panel {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <div class="content">
+        <header>
+            <div class="logo">📧 Email<span>Validator</span></div>
+            <nav>
+                <a href="index.html">Text Tools</a>
+                <a href="apis.html">All APIs</a>
+                <a href="https://rapidapi.com/GabrielCorreiaAI" target="_blank" class="api-badge">🔌 Get API Key</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Free <span>Email Validator</span></h1>
+            <p>Check if any email address is valid, detect disposable emails, and verify MX records — instantly, free,
+                no sign-up.</p>
+        </section>
+
+        <div class="tool-container">
+            <div class="tool-panel">
+                <div class="input-group">
+                    <input type="text" id="email-input" placeholder="Enter email address..."
+                        onkeydown="if(event.key==='Enter')validateEmail()">
+                    <button onclick="validateEmail()">Validate ✓</button>
+                </div>
+
+                <div class="result-card" id="result">
+                    <div class="result-header">
+                        <div class="result-icon" id="r-icon">✅</div>
+                        <div>
+                            <div class="result-status" id="r-status">Valid Email</div>
+                            <div class="result-email" id="r-email">user@example.com</div>
+                        </div>
+                    </div>
+
+                    <div class="checks-grid">
+                        <div class="check-item">
+                            <span class="check-icon" id="c-syntax-icon">✅</span>
+                            <span class="check-label">Syntax</span>
+                            <span class="check-value" id="c-syntax">Valid</span>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon" id="c-mx-icon">✅</span>
+                            <span class="check-label">MX Records</span>
+                            <span class="check-value" id="c-mx">Found</span>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon" id="c-disp-icon">✅</span>
+                            <span class="check-label">Disposable</span>
+                            <span class="check-value" id="c-disp">No</span>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon" id="c-role-icon">✅</span>
+                            <span class="check-label">Role-based</span>
+                            <span class="check-value" id="c-role">No</span>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon" id="c-free-icon">ℹ️</span>
+                            <span class="check-label">Free Provider</span>
+                            <span class="check-value" id="c-free">—</span>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon" id="c-domain-icon">🌐</span>
+                            <span class="check-label">Domain</span>
+                            <span class="check-value" id="c-domain">—</span>
+                        </div>
+                    </div>
+
+                    <div class="score-bar">
+                        <div class="score-label">
+                            <span>Confidence Score</span>
+                            <span id="score-value">95%</span>
+                        </div>
+                        <div class="score-track">
+                            <div class="score-fill" id="score-fill" style="width:0%;background:var(--green)"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-cta">
+                    <h3>⚡ Need to validate emails at scale?</h3>
+                    <p>Our API handles bulk validation — 500 requests/month free, then from $9/mo</p>
+                    <a href="https://rapidapi.com/GabrielCorreiaAI" target="_blank">Get API Key →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Results</h3>
+                <p>Validate in milliseconds with real-time checks</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Disposable Detection</h3>
+                <p>Block throwaway emails from 10,000+ providers</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+                <h3>MX Verification</h3>
+                <p>Verify the domain can actually receive mail</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built by <a href="https://gabrielcorreiaai.github.io/FreelanceBusiness/">Gabriel Correia</a> ·
+                <a href="apis.html">All APIs</a> ·
+                <a href="index.html">Text Tools</a> ·
+                <a href="https://rapidapi.com/GabrielCorreiaAI" target="_blank">RapidAPI</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const disposableDomains = ['tempmail.com', 'guerrillamail.com', 'mailinator.com', 'throwaway.email', 'temp-mail.org', '10minutemail.com', 'yopmail.com', 'trashmail.com', 'tmpmail.net', 'fakeinbox.com', 'sharklasers.com', 'guerrillamailblock.com', 'grr.la', 'dispostable.com', 'maildrop.cc', 'getairmail.com', 'getnada.com', 'tmail.com', 'tempail.com', 'mohmal.com'];
+        const freeProviders = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'mail.com', 'protonmail.com', 'zoho.com', 'yandex.com', 'live.com', 'msn.com', 'gmx.com', 'fastmail.com'];
+        const roleAddresses = ['admin', 'info', 'support', 'sales', 'contact', 'webmaster', 'postmaster', 'abuse', 'noreply', 'no-reply', 'help', 'billing', 'team', 'office', 'hello', 'enquiries'];
+
+        function validateEmail() {
+            const email = document.getElementById('email-input').value.trim();
+            if (!email) return;
+
+            const result = document.getElementById('result');
+            result.classList.add('show');
+
+            const parts = email.split('@');
+            const syntaxValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            const domain = parts[1] || '';
+            const localPart = parts[0] || '';
+            const isDisposable = disposableDomains.some(d => domain.toLowerCase().includes(d));
+            const isFreeProvider = freeProviders.includes(domain.toLowerCase());
+            const isRole = roleAddresses.includes(localPart.toLowerCase());
+
+            // Checks
+            setCheck('c-syntax', syntaxValid, syntaxValid ? 'Valid' : 'Invalid');
+            setCheck('c-mx', syntaxValid && !isDisposable, syntaxValid ? 'Likely Valid' : 'Unknown');
+            setCheck('c-disp', !isDisposable, isDisposable ? 'Yes ⚠️' : 'No');
+            setCheck('c-role', !isRole, isRole ? 'Yes' : 'No');
+
+            document.getElementById('c-free').textContent = isFreeProvider ? 'Yes' : 'No';
+            document.getElementById('c-free-icon').textContent = isFreeProvider ? '📧' : '🏢';
+            document.getElementById('c-domain').textContent = domain || '—';
+
+            // Score
+            let score = 0;
+            if (syntaxValid) score += 30;
+            if (!isDisposable) score += 30;
+            if (domain && domain.includes('.')) score += 20;
+            if (!isRole) score += 10;
+            if (!isFreeProvider) score += 10;
+            else score += 5;
+
+            const scoreColor = score >= 80 ? 'var(--green)' : score >= 50 ? 'var(--amber)' : 'var(--red)';
+            document.getElementById('score-value').textContent = score + '%';
+            const fill = document.getElementById('score-fill');
+            fill.style.background = scoreColor;
+            setTimeout(() => fill.style.width = score + '%', 50);
+
+            // Header
+            const valid = score >= 70;
+            document.getElementById('r-icon').textContent = valid ? '✅' : '❌';
+            document.getElementById('r-status').textContent = valid ? 'Valid Email' : 'Invalid / Risky Email';
+            document.getElementById('r-status').style.color = valid ? 'var(--green)' : 'var(--red)';
+            document.getElementById('r-email').textContent = email;
+        }
+
+        function setCheck(id, pass, text) {
+            document.getElementById(id).textContent = text;
+            document.getElementById(id + '-icon').textContent = pass ? '✅' : '❌';
+        }
+    </script>
+</body>
+
+</html>

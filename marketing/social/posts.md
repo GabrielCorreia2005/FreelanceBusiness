@@ -1,254 +1,127 @@
-# Social Media Posts — Reddit & Twitter/X
+# Social Media Posts — API Growth Marketing
 
-## Reddit Strategy
+## Reddit (r/SideProject)
 
-### Best Subreddits to Post in
-
-- r/SideProject — showcase your projects
-- r/entrepreneur — business value angle
-- r/webdev — technical audience
-- r/programming — developer tools angle
-- r/artificial — AI tools angle
-- r/chrome_extensions — extension showcase
-- r/smallbusiness — automation for business owners
-
----
-
-### Reddit Post #1: SideProject/Entrepreneur — APIs
-
-**Title:**
-> I built 7 REST APIs and published them on RapidAPI — here's what I learned about monetizing developer tools
+**Title:** I built 10+ free REST APIs for developers — Email Validator, QR Generator, Text Summarizer and more
 
 **Body:**
+Hey everyone! I've been building a collection of developer APIs and free online tools.
 
-```
-I've spent the last week building and deploying 7 REST APIs to RapidAPI. Some context on what I built and what I learned:
+All APIs have:
 
-**The APIs (all live, free tier available):**
-- Password Generator API — random passwords, passphrases, strength scoring
-- URL Shortener API — custom codes, click tracking, expiry
-- Text Summarizer API — extractive NLP, no external dependencies
-- Sentiment Analysis API — VADER-like scoring, emotion detection
-- Currency Converter API — 40+ currencies, live rates, offline fallback
-- PDF Generator API — HTML to PDF, URL to PDF, invoice templates
-- Web Scraper API — extract text, links, images from any URL
+- ✅ Free tier (500 requests/month)
+- ✅ No credit card required
+- ✅ JSON responses
+- ✅ CORS enabled
 
-**What actually works for monetization on RapidAPI:**
-1. Always have a free tier — it drives sign-ups and shows you the usage patterns
-2. Price based on requests/month not features — simpler to understand
-3. The best-converting APIs solve a specific problem (password generation, currency conversion) better than pure "utility" APIs
+**Available APIs:**
 
-**What's harder than you think:**
-- Getting your first paying subscriber takes 2-3 weeks of organic traffic
-- Documentation quality is *the* make-or-break factor
-- You need to be in multiple categories to get discovered
+- 📧 Email Validator (MX records, disposable detection)
+- 📝 Text Summarizer (extractive, with keywords)
+- 😊 Sentiment Analysis (VADER-like scoring)
+- 📱 QR Code Generator (custom colors, WiFi, vCards)
+- 🔐 Password Generator (crypto-secure)
+- 💱 Currency Converter (40+ currencies)
+- 📄 PDF Generator (HTML to PDF)
+- 🕷️ Web Scraper (CSS selectors, JSON output)
+- 🔗 URL Shortener (click tracking, expiry)
+- 📸 Screenshot API (full page, custom sizes)
 
-Happy to answer questions about the tech stack (Node.js + Express) or the RapidAPI submission process.
+**Free online tools** (no sign-up): <https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/>
 
-[GitHub link if you want to see the code]
-```
+**All APIs**: <https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/apis.html>
 
-**Post Strategy:**
-
-- Post Tuesday-Thursday 9am-2pm EST for max visibility
-- Respond to every comment in the first 2 hours
+What APIs do YOU wish existed? I'll build the top-voted one this week! 🚀
 
 ---
 
-### Reddit Post #2: Chrome Extensions Showcase
+## Dev.to Post
 
-**Title:**
-> I published 3 free Chrome Extensions this week — Tab Dashboard, Price Tracker, and AI Page Summary
+**Title:** Best Free APIs for Developers in 2025 — No Credit Card Required
 
-**Body:**
+**Tags:** api, webdev, javascript, beginners
 
-```
-I've been building Chrome Extensions for the past few days. Here's what I shipped:
+**Cover image note:** Generate a dev-themed image with API icons
 
-**1. Focus Tab Dashboard** (replaces new tab)
-- Real-time clock + greeting
-- Persistent task list
-- Pomodoro timer with notifications
-- Quick links with favicons
-- Daily streak counter
-No extension does all this without cloud accounts. Yours works offline.
-
-**2. Price Tracker**
-- Detects prices on Amazon and other sites automatically
-- Set a target price and get notified when it drops
-- Background checking (hourly)
-- Works on any page with a visible price
-
-**3. AI Page Summary**
-- Summarizes any web page instantly
-- Shows keywords, reading time, word count
-- Runs locally — no API key, no data sent anywhere
-
-All three are Manifest V3 (future-proof, won't get deprecated).
-
-[Chrome Web Store links]
-
-Built these partly as portfolio pieces, partly because I actually wanted to use them. Which one sounds most useful to you?
-```
+**Body:** Use content from `marketing/blog-post-free-apis.md`
 
 ---
 
-## Twitter/X Post Templates
+## LinkedIn Post
 
-### Tweet Thread #1: Building in Public
+🚀 I just launched a collection of 10+ free APIs for developers!
 
-**Tweet 1 (hook):**
+Email validation, text summarization, QR codes, PDF generation, and more — all with generous free tiers (500 requests/month).
 
-```
-I built 7 REST APIs + 3 Chrome Extensions in one week while unemployed.
+Plus free online tools that anyone can use: text summarizer, sentiment analyzer, email validator, QR code generator.
 
-Here's exactly what I built and how much I plan to earn from them 🧵
-```
+Building useful tools that solve real problems is the best marketing.
 
-**Tweet 2:**
+🔗 Free tools: <https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/>
+🔌 API showcase: <https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/apis.html>
 
-```
-The APIs (all live on RapidAPI):
-
-🔐 Password Generator — rate: 500 req/day free, $4.99/mo pro
-🔗 URL Shortener — with click analytics
-📝 Text Summarizer — no OpenAI needed, works offline
-😊 Sentiment Analysis — VADER scoring + emotions
-💱 Currency Converter — 40+ currencies, live rates
-```
-
-**Tweet 3:**
-
-```
-The Chrome Extensions:
-
-🧩 Focus Tab Dashboard — new tab replacement w/ tasks + Pomodoro
-💰 Price Tracker — alerts when Amazon prices drop
-📖 AI Page Summary — summarize any page, no API key
-
-All Manifest V3 (future-proof)
-```
-
-**Tweet 4:**
-
-```
-Revenue plan for this month:
-
-RapidAPI subscriptions: €150-300
-Fiverr gigs (APIs + chatbots + extensions): €1,500-2,000
-Upwork projects: €800-1,200
-Chrome Extension donations/pro tier: €100-200
-
-Total target: €5,000 🎯
-```
-
-**Tweet 5 (CTA):**
-
-```
-If you need a:
-- Custom API built and deployed
-- AI chatbot
-- Chrome Extension
-
-I'm delivering in 2-5 days.
-
-Links in bio (Fiverr + Upwork) 👇
-```
+# APIs #DeveloperTools #WebDev #BuildInPublic #SaaS
 
 ---
 
-### Tweet Thread #2: Tutorial/Value Post (gets shares)
+## Twitter/X Thread
 
 **Tweet 1:**
+🚀 I built 10+ free REST APIs for developers
 
-```
-How I built a production-ready REST API in under 3 hours:
+Email validation, QR codes, text analysis, PDF generation, and more.
 
-(Node.js + Express + Railway deployment)
+All with free tiers (500 req/month). No credit card.
 
-A simple step-by-step 🧵
-```
+A thread 🧵
 
 **Tweet 2:**
+📧 Email Validator API
 
-```
-Step 1: Project setup
+- MX record verification
+- Disposable email detection
+- Role-based filtering
+- Bulk mode
 
-mkdir my-api && cd my-api
-npm init -y
-npm install express
-
-Create index.js — done in 30 seconds.
-```
+Try it free: [link to tool]
 
 **Tweet 3:**
+📝 Text Analysis APIs
 
-```
-Step 2: Add auth middleware (never skip this)
-
-const auth = (req, res, next) => {
-  const key = req.headers['x-api-key']
-  if (key !== process.env.API_KEY)
-    return res.status(401).json({ error: 'Unauthorized' })
-  next()
-}
-
-This protects your API from being abused.
-```
+- Summarizer: Extract key sentences from any text
+- Sentiment: VADER-like scoring with emotion detection
+- Batch processing for both
 
 **Tweet 4:**
+📱 QR Code Generator API
 
-```
-Step 3: Add your endpoints
+- Custom colors
+- URL, text, WiFi, vCard support
+- PNG and SVG output
 
-app.get('/convert', auth, async (req, res) => {
-  const { from, to, amount } = req.query
-  // your logic here
-  res.json({ result, rate })
-})
-
-Keep each endpoint focused on ONE thing.
-```
+Try it free: [link to QR generator]
 
 **Tweet 5:**
+🛠️ Plus: Password Generator, Currency Converter, PDF Generator, Web Scraper, URL Shortener, Screenshot API
 
-```
-Step 4: Deploy to Railway in 5 minutes
+All free tier. All production-ready.
 
-1. Push to GitHub
-2. Connect to Railway
-3. Set API_KEY env variable
-4. Deploy → get live URL
-
-That's it. Your API is live.
-```
+Browse all APIs: [link to apis.html]
 
 **Tweet 6:**
+I also built free online tools so anyone can try them:
 
-```
-Step 5: Publish to RapidAPI for monetization
+🔧 TextToolbox (5 text tools)
+📧 Email Validator
+📱 QR Generator
 
-1. Create account (free)
-2. Add your Railway URL as base URL
-3. Define endpoints in their UI
-4. Set free tier + paid tiers
-5. Publish
+No sign-up. No limits.
 
-Your API is now discoverable by 4M+ developers.
-```
+[link to tools]
 
----
+**Tweet 7:**
+Looking for a specific API? Tell me what you need.
 
-## Posting Schedule
+I'll build the most-requested one this week.
 
-| Day | Platform | Post |
-|-----|----------|------|
-| Mon | Twitter | Thread #2 (tutorial) |
-| Tue | Reddit r/SideProject | Post #1 (API showcase) |
-| Wed | Twitter | Thread #1 (building in public) |
-| Thu | Reddit r/chrome_extensions | Post #2 (extensions) |
-| Fri | Twitter | Single tweet (CTA) |
-| Sat | Reddit r/entrepreneur | Repost #1 with different title |
-| Sun | Rest | - |
-
-**Key:** Consistency > viral moments. One post per day, engage with replies.
+Follow for updates 🔔

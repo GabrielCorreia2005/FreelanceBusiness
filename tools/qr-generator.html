@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free QR Code Generator — Create QR Codes Online | DevToolbox</title>
+    <meta name="description"
+        content="Free online QR code generator. Create QR codes for URLs, text, WiFi, vCards. Customizable colors and sizes. No sign-up. API available for developers.">
+    <meta name="keywords" content="QR code generator, free QR code, create QR code online, QR code API, custom QR code">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #060913;
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.07);
+            --text: #e2e8f0;
+            --muted: #64748b;
+            --accent: #6366f1;
+            --accent2: #8b5cf6;
+            --green: #10b981;
+            --blue: #3b82f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .bg-glow {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background: radial-gradient(ellipse at 40% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 55%),
+                radial-gradient(ellipse at 70% 60%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(6, 9, 19, 0.85);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        header nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        header nav a:hover {
+            color: var(--text);
+        }
+
+        .api-badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            text-decoration: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--blue), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .tool-panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .panel-left {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .panel-right {
+            flex: 0 0 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .type-tabs {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .type-tab {
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .type-tab:hover,
+        .type-tab.active {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--blue);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        label {
+            display: block;
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+            margin-top: 12px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--accent);
+        }
+
+        textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+
+        .color-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .color-group {
+            flex: 1;
+        }
+
+        .color-group label {
+            margin-top: 0;
+        }
+
+        input[type="color"] {
+            width: 100%;
+            height: 36px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px;
+        }
+
+        .btn-generate {
+            margin-top: 1rem;
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 10px;
+            border: none;
+            background: linear-gradient(135deg, var(--blue), var(--accent));
+            color: white;
+            font-weight: 600;
+            font-family: inherit;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-generate:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .qr-preview {
+            width: 220px;
+            height: 220px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            margin-bottom: 1rem;
+            padding: 10px;
+        }
+
+        .qr-preview canvas {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .qr-placeholder {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .btn-download {
+            width: 100%;
+            padding: 0.6rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .btn-download:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .api-cta {
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+            border-radius: 10px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            width: 100%;
+        }
+
+        .api-cta h3 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .api-cta p {
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        .api-cta a {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .tool-panel {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .panel-right {
+                flex: 1;
+                align-items: center;
+                width: 100%;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <div class="content">
+        <header>
+            <div class="logo">📱 QR<span>Generator</span></div>
+            <nav>
+                <a href="index.html">Text Tools</a>
+                <a href="apis.html">All APIs</a>
+                <a href="https://rapidapi.com/GabrielCorreiaAI" target="_blank" class="api-badge">🔌 Get API Key</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Free <span>QR Code Generator</span></h1>
+            <p>Create beautiful QR codes for URLs, text, WiFi credentials, and more. Customize colors and download
+                instantly.</p>
+        </section>
+
+        <div class="tool-container">
+            <div class="tool-panel">
+                <div class="panel-left">
+                    <div class="type-tabs">
+                        <button class="type-tab active" onclick="setType('url', this)">🔗 URL</button>
+                        <button class="type-tab" onclick="setType('text', this)">📝 Text</button>
+                        <button class="type-tab" onclick="setType('wifi', this)">📶 WiFi</button>
+                        <button class="type-tab" onclick="setType('email', this)">📧 Email</button>
+                    </div>
+
+                    <div id="input-url">
+                        <label>URL</label>
+                        <input type="text" id="qr-url" placeholder="https://example.com"
+                            value="https://gabrielcorreiaai.github.io/FreelanceBusiness/">
+                    </div>
+                    <div id="input-text" style="display:none">
+                        <label>Text</label>
+                        <textarea id="qr-text" placeholder="Enter your text..."></textarea>
+                    </div>
+                    <div id="input-wifi" style="display:none">
+                        <label>Network Name (SSID)</label>
+                        <input type="text" id="wifi-ssid" placeholder="MyWiFi">
+                        <label>Password</label>
+                        <input type="text" id="wifi-pass" placeholder="Password">
+                        <label>Encryption</label>
+                        <select id="wifi-enc">
+                            <option value="WPA">WPA/WPA2</option>
+                            <option value="WEP">WEP</option>
+                            <option value="">None</option>
+                        </select>
+                    </div>
+                    <div id="input-email" style="display:none">
+                        <label>Email Address</label>
+                        <input type="text" id="qr-email" placeholder="hello@example.com">
+                        <label>Subject (optional)</label>
+                        <input type="text" id="qr-subject" placeholder="Hello">
+                    </div>
+
+                    <div class="color-row">
+                        <div class="color-group">
+                            <label>QR Color</label>
+                            <input type="color" id="qr-fg" value="#000000">
+                        </div>
+                        <div class="color-group">
+                            <label>Background</label>
+                            <input type="color" id="qr-bg" value="#ffffff">
+                        </div>
+                    </div>
+
+                    <label>Size</label>
+                    <select id="qr-size">
+                        <option value="200">200 × 200</option>
+                        <option value="300" selected>300 × 300</option>
+                        <option value="500">500 × 500</option>
+                        <option value="800">800 × 800</option>
+                    </select>
+
+                    <button class="btn-generate" onclick="generateQR()">Generate QR Code</button>
+                </div>
+
+                <div class="panel-right">
+                    <div class="qr-preview" id="qr-preview">
+                        <div class="qr-placeholder">Your QR code will<br>appear here</div>
+                    </div>
+                    <a class="btn-download" id="btn-download" style="display:none" download="qrcode.png">📥 Download
+                        PNG</a>
+                    <div class="api-cta">
+                        <h3>⚡ Generate QR codes via API</h3>
+                        <p>500 requests/month free</p>
+                        <a href="https://rapidapi.com/GabrielCorreiaAI" target="_blank">Get API Key →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built by <a href="https://gabrielcorreiaai.github.io/FreelanceBusiness/">Gabriel Correia</a> ·
+                <a href="apis.html">All APIs</a> ·
+                <a href="index.html">Text Tools</a> ·
+                <a href="email-validator.html">Email Validator</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        let currentType = 'url';
+
+        function setType(type, btn) {
+            currentType = type;
+            document.querySelectorAll('.type-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            ['url', 'text', 'wifi', 'email'].forEach(t => {
+                document.getElementById('input-' + t).style.display = t === type ? '' : 'none';
+            });
+        }
+
+        function getQRData() {
+            switch (currentType) {
+                case 'url': return document.getElementById('qr-url').value || 'https://example.com';
+                case 'text': return document.getElementById('qr-text').value || 'Hello World';
+                case 'wifi':
+                    const ssid = document.getElementById('wifi-ssid').value;
+                    const pass = document.getElementById('wifi-pass').value;
+                    const enc = document.getElementById('wifi-enc').value;
+                    return `WIFI:T:${enc};S:${ssid};P:${pass};;`;
+                case 'email':
+                    const email = document.getElementById('qr-email').value;
+                    const subj = document.getElementById('qr-subject').value;
+                    return `mailto:${email}?subject=${encodeURIComponent(subj)}`;
+            }
+        }
+
+        function generateQR() {
+            const data = getQRData();
+            const size = parseInt(document.getElementById('qr-size').value);
+            const fg = document.getElementById('qr-fg').value;
+            const bg = document.getElementById('qr-bg').value;
+
+            const preview = document.getElementById('qr-preview');
+            preview.innerHTML = '';
+
+            const canvas = document.createElement('canvas');
+            QRCode.toCanvas(canvas, data, {
+                width: size,
+                color: { dark: fg, light: bg },
+                margin: 2,
+                errorCorrectionLevel: 'M'
+            }, function (error) {
+                if (error) {
+                    preview.innerHTML = '<div class="qr-placeholder">Error generating QR code</div>';
+                    return;
+                }
+                canvas.style.maxWidth = '200px';
+                canvas.style.maxHeight = '200px';
+                preview.appendChild(canvas);
+
+                const btn = document.getElementById('btn-download');
+                btn.href = canvas.toDataURL('image/png');
+                btn.style.display = '';
+            });
+        }
+
+        // Generate initial QR
+        setTimeout(generateQR, 500);
+    </script>
+</body>
+
+</html>
