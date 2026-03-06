@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextToolbox — Free AI Text Tools Online</title>
+    <meta name="description"
+        content="Free online text tools — summarize text, analyze sentiment, generate passwords, convert currencies. No sign-up required.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a1a;
+            --surface: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #e2e8f0;
+            --muted: #64748b;
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.15);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 26, 0.85);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        header nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        header nav a:hover {
+            color: var(--text);
+        }
+
+        .api-badge {
+            background: var(--primary-glow);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Tool tabs */
+        .tools-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 2rem 1rem 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tool-tab {
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .tool-tab:hover,
+        .tool-tab.active {
+            background: var(--primary-glow);
+            color: var(--primary);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        /* Tool panels */
+        .tool-container {
+            max-width: 800px;
+            margin: 1rem auto;
+            padding: 0 1rem;
+        }
+
+        .tool-panel {
+            display: none;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .tool-panel.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tool-panel h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .tool-panel .subtitle {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        textarea,
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: vertical;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        textarea:focus,
+        input:focus {
+            border-color: var(--primary);
+        }
+
+        textarea {
+            min-height: 120px;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #5558e6;
+            transform: translateY(-1px);
+        }
+
+        .btn-copy {
+            background: var(--surface);
+            color: var(--muted);
+            border: 1px solid var(--border);
+        }
+
+        .btn-copy:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text);
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            min-height: 80px;
+            line-height: 1.7;
+        }
+
+        .result .label {
+            color: var(--muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .result pre {
+            white-space: pre-wrap;
+            font-family: inherit;
+        }
+
+        .options-row {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .option-group {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .option-group label {
+            display: block;
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Sentiment bars */
+        .sentiment-bar {
+            height: 8px;
+            border-radius: 4px;
+            margin: 0.3rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .sentiment-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .sentiment-positive {
+            background: var(--success);
+        }
+
+        .sentiment-negative {
+            background: var(--danger);
+        }
+
+        .sentiment-neutral {
+            background: var(--warning);
+        }
+
+        .sentiment-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Password display */
+        .password-display {
+            font-family: 'Courier New', monospace;
+            font-size: 1.3rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            text-align: center;
+            word-break: break-all;
+            letter-spacing: 0.05em;
+            margin: 1rem 0;
+            border: 1px solid var(--border);
+        }
+
+        .strength-meter {
+            display: flex;
+            gap: 3px;
+            margin: 0.5rem 0;
+        }
+
+        .strength-bar {
+            flex: 1;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Stats bar */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .num {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat .lbl {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .tool-panel {
+                padding: 1rem;
+            }
+
+            .options-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Text<span>Toolbox</span></div>
+        <nav>
+            <a href="https://gabrielcorreiaai.github.io/FreelanceBusiness/">Portfolio</a>
+            <a href="https://rapidapi.com/GabrielCorreiaAI/api/password-generator37" class="api-badge">🔌 API Access</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Free <span>AI Text Tools</span> Online</h1>
+        <p>Summarize text, analyze sentiment, generate passwords — right in your browser. No sign-up needed.</p>
+    </section>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="num">5</div>
+            <div class="lbl">Free Tools</div>
+        </div>
+        <div class="stat">
+            <div class="num">0</div>
+            <div class="lbl">Sign-ups Required</div>
+        </div>
+        <div class="stat">
+            <div class="num">∞</div>
+            <div class="lbl">Uses / Day</div>
+        </div>
+    </div>
+
+    <div class="tools-nav">
+        <button class="tool-tab active" onclick="showTool('summarizer')">📝 Summarizer</button>
+        <button class="tool-tab" onclick="showTool('sentiment')">😊 Sentiment</button>
+        <button class="tool-tab" onclick="showTool('password')">🔐 Password</button>
+        <button class="tool-tab" onclick="showTool('wordcount')">📊 Word Count</button>
+        <button class="tool-tab" onclick="showTool('case')">Aa Case Convert</button>
+    </div>
+
+    <div class="tool-container">
+
+        <!-- SUMMARIZER -->
+        <div class="tool-panel active" id="tool-summarizer">
+            <h2>📝 Text Summarizer</h2>
+            <p class="subtitle">Paste long text and get a concise summary in seconds</p>
+            <textarea id="sum-input" placeholder="Paste your article, essay, or long text here..."></textarea>
+            <div class="options-row">
+                <div class="option-group">
+                    <label>Summary Length</label>
+                    <select id="sum-sentences">
+                        <option value="2">2 sentences</option>
+                        <option value="3" selected>3 sentences</option>
+                        <option value="5">5 sentences</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn-row">
+                <button class="btn btn-primary" onclick="summarize()">Summarize</button>
+                <button class="btn btn-copy" onclick="copyResult('sum-result')">📋 Copy</button>
+            </div>
+            <div class="result" id="sum-result">
+                <div class="label">Summary</div>
+                <pre id="sum-output">Your summary will appear here...</pre>
+            </div>
+        </div>
+
+        <!-- SENTIMENT -->
+        <div class="tool-panel" id="tool-sentiment">
+            <h2>😊 Sentiment Analyzer</h2>
+            <p class="subtitle">Detect emotions and sentiment in any text</p>
+            <textarea id="sent-input" placeholder="Type or paste text to analyze sentiment..."></textarea>
+            <div class="btn-row">
+                <button class="btn btn-primary" onclick="analyzeSentiment()">Analyze</button>
+            </div>
+            <div class="result" id="sent-result">
+                <div class="label">Sentiment Analysis</div>
+                <div id="sent-output">Results will appear here...</div>
+            </div>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="tool-panel" id="tool-password">
+            <h2>🔐 Password Generator</h2>
+            <p class="subtitle">Generate ultra-secure passwords instantly</p>
+            <div class="password-display" id="pw-display">Click Generate ↓</div>
+            <div class="strength-meter" id="pw-strength">
+                <div class="strength-bar"></div>
+                <div class="strength-bar"></div>
+                <div class="strength-bar"></div>
+                <div class="strength-bar"></div>
+                <div class="strength-bar"></div>
+            </div>
+            <div class="options-row">
+                <div class="option-group">
+                    <label>Length</label>
+                    <input type="number" id="pw-length" value="16" min="8" max="128">
+                </div>
+                <div class="option-group">
+                    <label>Include</label>
+                    <select id="pw-type">
+                        <option value="all">Letters + Numbers + Symbols</option>
+                        <option value="alphanumeric">Letters + Numbers</option>
+                        <option value="letters">Letters Only</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn-row">
+                <button class="btn btn-primary" onclick="generatePassword()">🎲 Generate</button>
+                <button class="btn btn-copy" onclick="copyText('pw-display')">📋 Copy</button>
+            </div>
+        </div>
+
+        <!-- WORD COUNT -->
+        <div class="tool-panel" id="tool-wordcount">
+            <h2>📊 Word & Character Counter</h2>
+            <p class="subtitle">Count words, characters, sentences, and reading time</p>
+            <textarea id="wc-input" placeholder="Type or paste text here..." oninput="countWords()"></textarea>
+            <div class="result">
+                <div
+                    style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:1rem;text-align:center;">
+                    <div>
+                        <div class="stat">
+                            <div class="num" id="wc-words">0</div>
+                            <div class="lbl">Words</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="stat">
+                            <div class="num" id="wc-chars">0</div>
+                            <div class="lbl">Characters</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="stat">
+                            <div class="num" id="wc-sentences">0</div>
+                            <div class="lbl">Sentences</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="stat">
+                            <div class="num" id="wc-reading">0m</div>
+                            <div class="lbl">Reading Time</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="stat">
+                            <div class="num" id="wc-paragraphs">0</div>
+                            <div class="lbl">Paragraphs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CASE CONVERTER -->
+        <div class="tool-panel" id="tool-case">
+            <h2>Aa Case Converter</h2>
+            <p class="subtitle">Convert text between UPPERCASE, lowercase, Title Case and more</p>
+            <textarea id="case-input" placeholder="Type or paste text to convert..."></textarea>
+            <div class="btn-row" style="flex-wrap:wrap;">
+                <button class="btn btn-primary" onclick="convertCase('upper')">UPPERCASE</button>
+                <button class="btn btn-primary" onclick="convertCase('lower')">lowercase</button>
+                <button class="btn btn-primary" onclick="convertCase('title')">Title Case</button>
+                <button class="btn btn-primary" onclick="convertCase('sentence')">Sentence case</button>
+                <button class="btn btn-copy" onclick="copyResult('case-result')">📋 Copy</button>
+            </div>
+            <div class="result" id="case-result">
+                <div class="label">Result</div>
+                <pre id="case-output">Converted text will appear here...</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Built by <a href="https://gabrielcorreiaai.github.io/FreelanceBusiness/">GabrielCorreiaAI</a> ·
+            Need the API? <a href="https://rapidapi.com/GabrielCorreiaAI/api/password-generator37">Get API Access →</a>
+        </p>
+    </footer>
+
+    <script>
+        // Tab switching
+        function showTool(name) {
+            document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tool-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tool-' + name).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Summarizer (local extractive)
+        function summarize() {
+            const text = document.getElementById('sum-input').value.trim();
+            if (!text) return;
+            const numSentences = parseInt(document.getElementById('sum-sentences').value);
+            const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+            if (sentences.length <= numSentences) {
+                document.getElementById('sum-output').textContent = text;
+                return;
+            }
+            // TF-IDF-like scoring
+            const words = text.toLowerCase().split(/\s+/);
+            const freq = {};
+            words.forEach(w => { const clean = w.replace(/[^a-záàâãéèêíïóôõöúçñ]/gi, ''); if (clean.length > 3) freq[clean] = (freq[clean] || 0) + 1; });
+            const scored = sentences.map((s, i) => {
+                const sWords = s.toLowerCase().split(/\s+/);
+                let score = sWords.reduce((acc, w) => { const c = w.replace(/[^a-záàâãéèêíïóôõöúçñ]/gi, ''); return acc + (freq[c] || 0); }, 0);
+                if (i === 0) score *= 1.5; // boost first sentence
+                return { text: s.trim(), score, index: i };
+            });
+            scored.sort((a, b) => b.score - a.score);
+            const top = scored.slice(0, numSentences).sort((a, b) => a.index - b.index);
+            document.getElementById('sum-output').textContent = top.map(s => s.text).join(' ');
+        }
+
+        // Sentiment (VADER-like)
+        function analyzeSentiment() {
+            const text = document.getElementById('sent-input').value.trim();
+            if (!text) return;
+            const positive = ['good', 'great', 'excellent', 'amazing', 'wonderful', 'fantastic', 'love', 'happy', 'best', 'awesome',
+                'beautiful', 'brilliant', 'superb', 'perfect', 'outstanding', 'incredible', 'enjoy', 'pleasant', 'recommend', 'delightful'];
+            const negative = ['bad', 'terrible', 'awful', 'horrible', 'worst', 'hate', 'poor', 'disappointing', 'ugly', 'boring',
+                'dreadful', 'mediocre', 'useless', 'broken', 'fail', 'annoying', 'frustrating', 'waste', 'disgusting', 'pathetic'];
+            const words = text.toLowerCase().split(/\s+/);
+            let pos = 0, neg = 0;
+            words.forEach(w => { const c = w.replace(/[^a-z]/g, ''); if (positive.includes(c)) pos++; if (negative.includes(c)) neg++; });
+            const total = pos + neg || 1;
+            const posP = Math.round((pos / total) * 100);
+            const negP = Math.round((neg / total) * 100);
+            const neuP = pos === 0 && neg === 0 ? 100 : 0;
+            const label = pos > neg ? '😊 Positive' : neg > pos ? '😞 Negative' : '😐 Neutral';
+            const color = pos > neg ? '#10b981' : neg > pos ? '#ef4444' : '#f59e0b';
+            document.getElementById('sent-output').innerHTML = `
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;color:${color}">${label}</div>
+        <div class="sentiment-row"><span>Positive</span><span>${posP}%</span></div>
+        <div class="sentiment-bar"><div class="sentiment-fill sentiment-positive" style="width:${posP}%"></div></div>
+        <div class="sentiment-row"><span>Negative</span><span>${negP}%</span></div>
+        <div class="sentiment-bar"><div class="sentiment-fill sentiment-negative" style="width:${negP}%"></div></div>
+        <div class="sentiment-row"><span>Neutral</span><span>${neuP}%</span></div>
+        <div class="sentiment-bar"><div class="sentiment-fill sentiment-neutral" style="width:${neuP}%"></div></div>
+        <div style="margin-top:1rem;font-size:0.85rem;color:var(--muted)">Words analyzed: ${words.length} · Positive: ${pos} · Negative: ${neg}</div>
+      `;
+        }
+
+        // Password Generator
+        function generatePassword() {
+            const length = parseInt(document.getElementById('pw-length').value) || 16;
+            const type = document.getElementById('pw-type').value;
+            let chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            if (type === 'all' || type === 'alphanumeric') chars += '0123456789';
+            if (type === 'all') chars += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+            const arr = new Uint32Array(length);
+            crypto.getRandomValues(arr);
+            let pw = '';
+            for (let i = 0; i < length; i++) pw += chars[arr[i] % chars.length];
+            document.getElementById('pw-display').textContent = pw;
+            // Strength meter
+            let strength = 0;
+            if (length >= 8) strength++;
+            if (length >= 12) strength++;
+            if (/[A-Z]/.test(pw) && /[a-z]/.test(pw)) strength++;
+            if (/[0-9]/.test(pw)) strength++;
+            if (/[^a-zA-Z0-9]/.test(pw)) strength++;
+            const colors = ['#ef4444', '#f59e0b', '#f59e0b', '#10b981', '#10b981'];
+            document.querySelectorAll('#pw-strength .strength-bar').forEach((bar, i) => {
+                bar.style.background = i < strength ? colors[strength - 1] : 'rgba(255,255,255,0.1)';
+            });
+        }
+
+        // Word Counter
+        function countWords() {
+            const text = document.getElementById('wc-input').value;
+            const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+            const chars = text.length;
+            const sentences = (text.match(/[.!?]+/g) || []).length || (text.trim() ? 1 : 0);
+            const paragraphs = text.trim() ? text.split(/\n\s*\n/).filter(p => p.trim()).length : 0;
+            const readingMin = Math.ceil(words / 200);
+            document.getElementById('wc-words').textContent = words;
+            document.getElementById('wc-chars').textContent = chars;
+            document.getElementById('wc-sentences').textContent = sentences;
+            document.getElementById('wc-reading').textContent = readingMin + 'm';
+            document.getElementById('wc-paragraphs').textContent = paragraphs;
+        }
+
+        // Case Converter
+        function convertCase(type) {
+            const text = document.getElementById('case-input').value;
+            if (!text) return;
+            let result;
+            switch (type) {
+                case 'upper': result = text.toUpperCase(); break;
+                case 'lower': result = text.toLowerCase(); break;
+                case 'title': result = text.replace(/\w\S*/g, t => t.charAt(0).toUpperCase() + t.substr(1).toLowerCase()); break;
+                case 'sentence': result = text.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, c => c.toUpperCase()); break;
+            }
+            document.getElementById('case-output').textContent = result;
+        }
+
+        // Copy helpers
+        function copyResult(id) {
+            const el = document.getElementById(id);
+            const text = el.querySelector('pre')?.textContent || el.textContent;
+            navigator.clipboard.writeText(text);
+            const btn = event.target;
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => btn.textContent = '📋 Copy', 1500);
+        }
+        function copyText(id) {
+            navigator.clipboard.writeText(document.getElementById(id).textContent);
+            const btn = event.target;
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => btn.textContent = '📋 Copy', 1500);
+        }
+
+        // Generate initial password
+        generatePassword();
+    </script>
+</body>
+
+</html>
