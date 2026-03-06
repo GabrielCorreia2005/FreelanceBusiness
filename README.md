@@ -1,62 +1,105 @@
-# 💼 FreelanceBusiness
+# ⚡ FreelanceBusiness — AI Developer Portfolio
 
-Sistema completo para gerir todas as fontes de rendimento com AI.
+> **Custom APIs, Chrome Extensions & AI Automation — delivered fast.**
 
-## Estrutura
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-6366f1?style=for-the-badge)](https://gabrielcorreiaai.github.io/FreelanceBusiness/)
+[![RapidAPI](https://img.shields.io/badge/RapidAPI-Published-00b4ac?style=for-the-badge)](https://rapidapi.com/GabrielCorreiaAI/api/password-generator37)
+[![GitHub Pages](https://img.shields.io/github/deployments/GabrielCorreiaAI/FreelanceBusiness/github-pages?label=Portfolio&style=for-the-badge)](https://gabrielcorreiaai.github.io/FreelanceBusiness/)
+
+---
+
+## 🚀 Live APIs
+
+| API | Status | Endpoint |
+|-----|--------|----------|
+| **Password Generator** | 🟢 Live | [Railway](https://password-generator-api-production.up.railway.app/health) · [RapidAPI](https://rapidapi.com/GabrielCorreiaAI/api/password-generator37) |
+| **URL Shortener** | 🟢 Live | [Railway](https://url-shortener-api-production-fb68.up.railway.app/health) |
+| **Text Summarizer** | 🟢 Live | [Railway](https://text-summarizer-api-production.up.railway.app/health) |
+| **Sentiment Analysis** | ✅ Built | Deploying to Render |
+| **Currency Converter** | ✅ Built | Deploying to Render |
+| **Web Scraper** | ✅ Built | Deploying to Render |
+| **Email Validator** | ✅ Built | Deploying to Render |
+| **QR Code Generator** | ✅ Built | Deploying to Render |
+| **PDF Generator** | ✅ Built | Deploying to Render |
+| **Screenshot API** | ✅ Built | Deploying to Render |
+
+---
+
+## 🧩 Chrome Extensions
+
+| Extension | Features |
+|-----------|----------|
+| **AI Page Summary** | Summarize any page, keywords, reading time |
+| **Focus Tab Dashboard** | Tasks, Pomodoro timer, clock, quotes |
+| **Price Tracker** | Amazon price alerts, target price notifications |
+
+---
+
+## 📦 Quick Start
+
+```bash
+git clone https://github.com/GabrielCorreiaAI/FreelanceBusiness.git
+cd FreelanceBusiness/apis/password-generator-api
+npm install
+node index.js
+# → http://localhost:3000/generate?length=16 -H "x-api-key: test-key"
+```
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Tech |
+|-------|------|
+| APIs | Node.js, Express |
+| Deploy | Railway, Render.com |
+| Marketplace | RapidAPI |
+| Extensions | Chrome Manifest V3 |
+| Portfolio | HTML/CSS, GitHub Pages |
+| Outreach | Python, SMTP |
+
+---
+
+## 💼 Hire Me
+
+I build **production-ready tools** — APIs, Chrome extensions, AI chatbots, and automation workflows.
+
+| Platform | Link |
+|----------|------|
+| 🌐 Portfolio | [gabrielcorreiaai.github.io/FreelanceBusiness](https://gabrielcorreiaai.github.io/FreelanceBusiness/) |
+| 📊 RapidAPI | [GabrielCorreiaAI](https://rapidapi.com/GabrielCorreiaAI/api/password-generator37) |
+
+---
+
+## 📁 Project Structure
 
 ```
 FreelanceBusiness/
-├── apis/
-│   ├── screenshot-api/    ← URL → PNG screenshot
-│   ├── qr-api/            ← Gera QR codes
-│   └── email-validator-api/ ← Valida emails
-├── agency/
-│   ├── scraper.py         ← Encontra leads no Google Maps
-│   ├── outreach.py        ← Envia emails automaticamente
-│   └── leads/             ← CSVs com contactos
-├── extensions/            ← Chrome extensions (em breve)
-├── ideas/
-│   └── IDEAS_PIPELINE.md  ← Tracker de todas as ideias
-└── .env.example           ← Configuração
+├── apis/                      # 10 production APIs
+│   ├── password-generator-api/  # 🟢 Live on Railway + RapidAPI
+│   ├── url-shortener-api/       # 🟢 Live on Railway
+│   ├── text-summarizer-api/     # 🟢 Live on Railway
+│   ├── sentiment-analysis-api/
+│   ├── currency-converter-api/
+│   ├── web-scraper-api/
+│   ├── email-validator-api/
+│   ├── qr-api/
+│   ├── pdf-generator-api/
+│   └── screenshot-api/
+├── extensions/                # 3 Chrome extensions
+│   ├── ai-page-summary/
+│   ├── tab-dashboard/
+│   └── price-tracker/
+├── marketing/                 # Marketing materials
+│   ├── fiverr/                #   3 gig descriptions
+│   ├── upwork/                #   Proposal templates
+│   ├── rapidapi/              #   Publishing guide
+│   └── portfolio/             #   Landing page source
+├── agency/                    # Cold email outreach system
+├── render.yaml                # One-click Render deploy
+└── index.html                 # Portfolio (GitHub Pages)
 ```
 
-## Setup Rápido
+---
 
-```bash
-# 1. Copiar configuração
-copy .env.example .env
-# Editar .env com os teus emails e keys
-
-# 2. APIs — instalar e correr
-cd apis/screenshot-api && npm install && npm start
-cd apis/qr-api && npm install && npm start
-cd apis/email-validator-api && npm install && npm start
-
-# 3. Agency — encontrar leads
-pip install requests python-dotenv
-python agency/scraper.py --query "agencias marketing Lisboa" --limit 50 --enrich-emails
-
-# 4. Agency — enviar emails (testar primeiro)
-python agency/outreach.py --csv agency/leads/leads_xxx.csv --dry-run
-python agency/outreach.py --csv agency/leads/leads_xxx.csv --limit 20
-```
-
-## Deploy APIs (Grátis)
-
-1. Cria conta em [railway.app](https://railway.app)
-2. "New Project" → "Deploy from GitHub"
-3. Seleciona a pasta da API
-4. Adiciona variável `API_KEY` nas settings
-5. **URL pública gerada automaticamente**
-
-## Publicar no RapidAPI
-
-1. Criar conta em [rapidapi.com/provider](https://rapidapi.com/provider)
-2. "Add New API"
-3. Nome, descrição, URL do Railway
-4. Adicionar endpoints manualmente
-5. Definir preços (free tier + paid)
-
-## Ideas Tracker
-
-Ver: [ideas/IDEAS_PIPELINE.md](ideas/IDEAS_PIPELINE.md)
+*Built with focus. Deployed with purpose.*

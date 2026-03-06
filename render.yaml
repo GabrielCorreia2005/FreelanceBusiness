@@ -1,6 +1,7 @@
-# Render.com Blueprint — deploys 4 APIs as Web Services
+# Render.com Blueprint — deploys 7 APIs as Web Services
 # Usage: Go to https://render.com/deploy → New Blueprint → connect GitHub repo
 # Render automatically reads this file from repo root
+# One-click: https://render.com/deploy?repo=https://github.com/GabrielCorreiaAI/FreelanceBusiness
 
 services:
   - type: web
@@ -46,6 +47,45 @@ services:
     name: pdf-generator-api
     runtime: node
     rootDir: apis/pdf-generator-api
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: API_KEY
+        value: gc-api-key-2026-secure
+      - key: PORT
+        value: 3000
+    plan: free
+
+  - type: web
+    name: email-validator-api
+    runtime: node
+    rootDir: apis/email-validator-api
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: API_KEY
+        value: gc-api-key-2026-secure
+      - key: PORT
+        value: 3000
+    plan: free
+
+  - type: web
+    name: qr-code-api
+    runtime: node
+    rootDir: apis/qr-api
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: API_KEY
+        value: gc-api-key-2026-secure
+      - key: PORT
+        value: 3000
+    plan: free
+
+  - type: web
+    name: screenshot-api
+    runtime: node
+    rootDir: apis/screenshot-api
     buildCommand: npm install
     startCommand: node index.js
     envVars:
