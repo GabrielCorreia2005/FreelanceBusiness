@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — GabrielCorreiaAI Extensions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #0f0f1a;
+            color: #e2e8f0;
+            line-height: 1.8;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin: 2rem 0 0.5rem;
+            color: #a5b4fc;
+        }
+
+        p,
+        li {
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        .updated {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            color: #6366f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: March 6, 2026</p>
+
+        <p>This privacy policy applies to all Chrome extensions published by GabrielCorreiaAI, including:</p>
+        <ul>
+            <li>AI Page Summary</li>
+            <li>Focus Tab Dashboard</li>
+            <li>Price Tracker</li>
+        </ul>
+
+        <h2>Data Collection</h2>
+        <p><strong>We do not collect, store, or transmit any personal data.</strong></p>
+        <p>All data processed by our extensions remains entirely within your browser using Chrome's local storage APIs.
+        </p>
+
+        <h2>What Data Stays Local</h2>
+        <ul>
+            <li><strong>AI Page Summary:</strong> Page text is analyzed locally. No text is sent to external servers.
+            </li>
+            <li><strong>Focus Tab Dashboard:</strong> Tasks, focus items, and settings are stored in
+                <code>chrome.storage.local</code>.</li>
+            <li><strong>Price Tracker:</strong> Tracked product URLs and prices are stored locally. Price checks fetch
+                publicly accessible product pages.</li>
+        </ul>
+
+        <h2>Third-Party Services</h2>
+        <p>Our extensions do not use any third-party analytics, tracking, or advertising services.</p>
+
+        <h2>Permissions</h2>
+        <p>We only request the minimum permissions necessary for each extension to function:</p>
+        <ul>
+            <li><strong>activeTab:</strong> To read the current page content for summarization or price detection.</li>
+            <li><strong>storage:</strong> To save your preferences and data locally.</li>
+            <li><strong>alarms:</strong> To schedule periodic price checks (Price Tracker only).</li>
+            <li><strong>notifications:</strong> To alert you of price drops (Price Tracker only).</li>
+        </ul>
+
+        <h2>Changes</h2>
+        <p>We may update this privacy policy from time to time. Changes will be posted on this page.</p>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this privacy policy, please contact us through our <a
+                href="https://github.com/GabrielCorreiaAI/FreelanceBusiness">GitHub repository</a>.</p>
+    </div>
+</body>
+
+</html>
