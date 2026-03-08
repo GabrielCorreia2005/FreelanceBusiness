@@ -2,9 +2,9 @@
 
 > **Custom APIs, Chrome Extensions & AI Automation — delivered fast.**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-6366f1?style=for-the-badge)](https://gabrielcorreiaai.github.io/FreelanceBusiness/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-6366f1?style=for-the-badge)](https://gabrielcorreia2005.github.io/FreelanceBusiness/)
 [![RapidAPI](https://img.shields.io/badge/RapidAPI-Published-00b4ac?style=for-the-badge)](https://rapidapi.com/GabrielCorreiaAI/api/password-generator37)
-[![GitHub Pages](https://img.shields.io/github/deployments/GabrielCorreiaAI/FreelanceBusiness/github-pages?label=Portfolio&style=for-the-badge)](https://gabrielcorreiaai.github.io/FreelanceBusiness/)
+[![GitHub Pages](https://img.shields.io/github/deployments/GabrielCorreiaAI/FreelanceBusiness/github-pages?label=Portfolio&style=for-the-badge)](https://gabrielcorreia2005.github.io/FreelanceBusiness/)
 
 ---
 
@@ -66,7 +66,7 @@ I build **production-ready tools** — APIs, Chrome extensions, AI chatbots, and
 
 | Platform | Link |
 |----------|------|
-| 🌐 Portfolio | [gabrielcorreiaai.github.io/FreelanceBusiness](https://gabrielcorreiaai.github.io/FreelanceBusiness/) |
+| 🌐 Portfolio | [gabrielcorreia2005.github.io/FreelanceBusiness](https://gabrielcorreia2005.github.io/FreelanceBusiness/) |
 | 📊 RapidAPI | [GabrielCorreiaAI](https://rapidapi.com/GabrielCorreiaAI/api/password-generator37) |
 
 ---

@@ -57,5 +57,5 @@ Added 7 free APIs from DevToolbox by Gabriel Correia:
 
 All APIs have free tiers (500 requests/month), use API key auth, support HTTPS, and allow CORS.
 
-Website: https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/apis.html
+Website: https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/apis.html
 ```

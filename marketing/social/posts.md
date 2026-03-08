@@ -27,9 +27,9 @@ All APIs have:
 - 🔗 URL Shortener (click tracking, expiry)
 - 📸 Screenshot API (full page, custom sizes)
 
-**Free online tools** (no sign-up): <https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/>
+**Free online tools** (no sign-up): <https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/>
 
-**All APIs**: <https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/apis.html>
+**All APIs**: <https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/apis.html>
 
 What APIs do YOU wish existed? I'll build the top-voted one this week! 🚀
 
@@ -57,8 +57,8 @@ Plus free online tools that anyone can use: text summarizer, sentiment analyzer,
 
 Building useful tools that solve real problems is the best marketing.
 
-🔗 Free tools: <https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/>
-🔌 API showcase: <https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/apis.html>
+🔗 Free tools: <https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/>
+🔌 API showcase: <https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/apis.html>
 
 # APIs #DeveloperTools #WebDev #BuildInPublic #SaaS
 

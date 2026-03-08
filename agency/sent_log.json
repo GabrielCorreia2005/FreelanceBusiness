@@ -1,0 +1,62 @@
+{
+  "ola@avitamina.pt": {
+    "name": "Vitamina",
+    "sent_at": "2026-03-06T16:06:43.116144",
+    "template": "agency",
+    "status": "sent"
+  },
+  "geral@fluxodigital.pt": {
+    "name": "Fluxo Digital",
+    "sent_at": "2026-03-06T16:06:48.231227",
+    "template": "agency",
+    "status": "sent"
+  },
+  "geral@designyes.pt": {
+    "name": "DESIGNYES",
+    "sent_at": "2026-03-06T16:06:53.435017",
+    "template": "agency",
+    "status": "sent"
+  },
+  "geral@inovve.com": {
+    "name": "Inovve",
+    "sent_at": "2026-03-06T16:06:58.575075",
+    "template": "agency",
+    "status": "sent"
+  },
+  "geral@iamsocial.pt": {
+    "name": "I AM Social",
+    "sent_at": "2026-03-06T16:07:03.690654",
+    "template": "agency",
+    "status": "sent"
+  },
+  "digital@marketing360.pt": {
+    "name": "Marketing 360",
+    "sent_at": "2026-03-06T16:07:08.801373",
+    "template": "agency",
+    "status": "sent"
+  },
+  "hello@contagio.pt": {
+    "name": "Cont\u00e1gio",
+    "sent_at": "2026-03-06T16:07:13.908193",
+    "template": "agency",
+    "status": "sent"
+  },
+  "hola@adauge.com": {
+    "name": "ADAUGE",
+    "sent_at": "2026-03-06T16:07:19.079024",
+    "template": "agency",
+    "status": "sent"
+  },
+  "info@tllmediasolutions.com": {
+    "name": "TLL Media Solutions",
+    "sent_at": "2026-03-06T16:07:24.223329",
+    "template": "agency",
+    "status": "sent"
+  },
+  "comercial@fluxodigital.pt": {
+    "name": "Fluxo Digital Comercial",
+    "sent_at": "2026-03-06T16:07:29.427461",
+    "template": "agency",
+    "status": "sent"
+  }
+}

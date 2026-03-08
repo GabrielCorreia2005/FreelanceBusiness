@@ -10,7 +10,7 @@ Validate email addresses in real-time with MX record verification, disposable em
 
 - **Free tier**: 500 requests/month
 - **Use cases**: Lead verification, form validation, CRM data cleaning
-- **Try it free**: [Online Email Validator](https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/email-validator.html)
+- **Try it free**: [Online Email Validator](https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/email-validator.html)
 - **Get API key**: [RapidAPI](https://rapidapi.com/GabrielCorreiaAI)
 
 ### 2. Text Summarizer API
@@ -19,7 +19,7 @@ Extract key sentences from long text using TF-IDF scoring. Configure summary len
 
 - **Free tier**: 500 requests/month
 - **Use cases**: Content aggregation, news apps, research tools
-- **Try it free**: [TextToolbox](https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/)
+- **Try it free**: [TextToolbox](https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/)
 - **Get API key**: [RapidAPI](https://rapidapi.com/GabrielCorreiaAI)
 
 ### 3. Sentiment Analysis API
@@ -28,7 +28,7 @@ VADER-like sentiment scoring with emotion detection, negation handling, and batc
 
 - **Free tier**: 500 requests/month
 - **Use cases**: Social media monitoring, review analysis, brand tracking
-- **Try it free**: [TextToolbox](https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/)
+- **Try it free**: [TextToolbox](https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/)
 - **Get API key**: [RapidAPI](https://rapidapi.com/GabrielCorreiaAI)
 
 ### 4. QR Code Generator API
@@ -37,7 +37,7 @@ Generate QR codes with custom colors, sizes, and error correction. Supports URL,
 
 - **Free tier**: 500 requests/month
 - **Use cases**: Marketing campaigns, event tickets, restaurant menus
-- **Try it free**: [QR Code Generator](https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/qr-generator.html)
+- **Try it free**: [QR Code Generator](https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/qr-generator.html)
 - **Get API key**: [RapidAPI](https://rapidapi.com/GabrielCorreiaAI)
 
 ### 5. Password Generator API
@@ -46,7 +46,7 @@ Cryptographically secure password generation with strength scoring, passphrases,
 
 - **Free tier**: 500 requests/month
 - **Use cases**: Security tools, user onboarding, password managers
-- **Try it free**: [TextToolbox](https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/)
+- **Try it free**: [TextToolbox](https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/)
 - **Get API key**: [RapidAPI](https://rapidapi.com/GabrielCorreiaAI/api/password-generator37)
 
 ### 6. Currency Converter API
@@ -121,8 +121,8 @@ const data = await res.json();
 
 ---
 
-**Browse all APIs**: [DevToolbox API Showcase](https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/apis.html)
+**Browse all APIs**: [DevToolbox API Showcase](https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/apis.html)
 
-**Free online tools**: [TextToolbox](https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/) · [Email Validator](https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/email-validator.html) · [QR Generator](https://gabrielcorreiaai.github.io/FreelanceBusiness/tools/qr-generator.html)
+**Free online tools**: [TextToolbox](https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/) · [Email Validator](https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/email-validator.html) · [QR Generator](https://gabrielcorreia2005.github.io/FreelanceBusiness/tools/qr-generator.html)
 
-Built by [Gabriel Correia](https://gabrielcorreiaai.github.io/FreelanceBusiness/) — AI Developer & Automation Engineer
+Built by [Gabriel Correia](https://gabrielcorreia2005.github.io/FreelanceBusiness/) — AI Developer & Automation Engineer
