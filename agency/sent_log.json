@@ -58,5 +58,65 @@
     "sent_at": "2026-03-06T16:07:29.427461",
     "template": "agency",
     "status": "sent"
+  },
+  "info@bluelemon.pt": {
+    "name": "BlueLemon",
+    "sent_at": "2026-03-08T10:54:51.379981",
+    "template": "agency",
+    "status": "sent"
+  },
+  "contacto@agenciarock.pt": {
+    "name": "Agencia Rock",
+    "sent_at": "2026-03-08T10:54:56.478130",
+    "template": "agency",
+    "status": "sent"
+  },
+  "info@pointless.pt": {
+    "name": "Pointless",
+    "sent_at": "2026-03-08T10:55:01.712009",
+    "template": "agency",
+    "status": "sent"
+  },
+  "info@descomunal.pt": {
+    "name": "Descomunal",
+    "sent_at": "2026-03-08T10:55:06.808466",
+    "template": "agency",
+    "status": "sent"
+  },
+  "geral@comunicame.pt": {
+    "name": "Comunica.me",
+    "sent_at": "2026-03-08T10:55:11.912703",
+    "template": "agency",
+    "status": "sent"
+  },
+  "info@creathing.pt": {
+    "name": "Creathing",
+    "sent_at": "2026-03-08T10:55:17.070273",
+    "template": "agency",
+    "status": "sent"
+  },
+  "abordo@comodoromarketing.es": {
+    "name": "Comodoro Marketing",
+    "sent_at": "2026-03-08T10:55:22.226501",
+    "template": "agency",
+    "status": "sent"
+  },
+  "info@sheridan.es": {
+    "name": "Agencia Sheridan",
+    "sent_at": "2026-03-08T10:55:27.344709",
+    "template": "agency",
+    "status": "sent"
+  },
+  "info@marketingdigitalpymes.es": {
+    "name": "Marketing Digital Pymes",
+    "sent_at": "2026-03-08T10:55:32.452579",
+    "template": "agency",
+    "status": "sent"
+  },
+  "tuseoweb@tuseoweb.es": {
+    "name": "TuSeoWeb",
+    "sent_at": "2026-03-08T10:55:37.578364",
+    "template": "agency",
+    "status": "sent"
   }
 }
