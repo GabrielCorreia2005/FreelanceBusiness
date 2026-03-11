@@ -1,7 +1,5 @@
-# Render.com Blueprint — deploys 7 APIs as Web Services
-# Usage: Go to https://render.com/deploy → New Blueprint → connect GitHub repo
-# Render automatically reads this file from repo root
-# One-click: https://render.com/deploy?repo=https://github.com/GabrielCorreiaAI/FreelanceBusiness
+# Render.com Blueprint — deploys all 10 APIs as Web Services
+# One-click deploy: https://render.com/deploy?repo=https://github.com/GabrielCorreia2005/FreelanceBusiness
 
 services:
   - type: web
@@ -86,6 +84,45 @@ services:
     name: screenshot-api
     runtime: node
     rootDir: apis/screenshot-api
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: API_KEY
+        value: gc-api-key-2026-secure
+      - key: PORT
+        value: 3000
+    plan: free
+
+  - type: web
+    name: text-summarizer-api
+    runtime: node
+    rootDir: apis/text-summarizer-api
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: API_KEY
+        value: gc-api-key-2026-secure
+      - key: PORT
+        value: 3000
+    plan: free
+
+  - type: web
+    name: url-shortener-api
+    runtime: node
+    rootDir: apis/url-shortener-api
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: API_KEY
+        value: gc-api-key-2026-secure
+      - key: PORT
+        value: 3000
+    plan: free
+
+  - type: web
+    name: password-generator-api
+    runtime: node
+    rootDir: apis/password-generator-api
     buildCommand: npm install
     startCommand: node index.js
     envVars:
