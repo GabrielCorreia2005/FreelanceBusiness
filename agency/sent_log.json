@@ -158,5 +158,325 @@
     "status": "sent",
     "followup_count": 1,
     "followup_1_at": "2026-03-16T15:43:46.227338"
+  },
+  "geral@primeyield.pt": {
+    "name": "Prime Yield",
+    "sent_at": "2026-03-16T15:51:46.719296",
+    "template": "contabilidade",
+    "status": "sent",
+    "original_subject": "AI automatiza reconciliação e relatórios da Prime Yield — posso mostrar?",
+    "followup_count": 0
+  },
+  "info@oliveira-associados.pt": {
+    "name": "Oliveira & Associados",
+    "sent_at": "2026-03-16T15:51:52.180784",
+    "template": "contabilidade",
+    "status": "sent",
+    "original_subject": "AI automatiza reconciliação e relatórios da Oliveira & Associados — posso mostrar?",
+    "followup_count": 0
+  },
+  "geral@contascertas.pt": {
+    "name": "Contas Certas",
+    "sent_at": "2026-03-16T15:51:57.606548",
+    "template": "contabilidade",
+    "status": "sent",
+    "original_subject": "AI automatiza reconciliação e relatórios da Contas Certas — posso mostrar?",
+    "followup_count": 0
+  },
+  "info@rcrcontabilidade.pt": {
+    "name": "RCR Contabilidade",
+    "sent_at": "2026-03-16T15:52:03.169253",
+    "template": "contabilidade",
+    "status": "sent",
+    "original_subject": "AI automatiza reconciliação e relatórios da RCR Contabilidade — posso mostrar?",
+    "followup_count": 0
+  },
+  "geral@sbconsulting.pt": {
+    "name": "SB Consulting",
+    "sent_at": "2026-03-16T15:52:08.674920",
+    "template": "contabilidade",
+    "status": "sent",
+    "original_subject": "AI automatiza reconciliação e relatórios da SB Consulting — posso mostrar?",
+    "followup_count": 0
+  },
+  "info@finpartner.pt": {
+    "name": "Finpartner",
+    "sent_at": "2026-03-16T15:52:14.094113",
+    "template": "contabilidade",
+    "status": "sent",
+    "original_subject": "AI automatiza reconciliação e relatórios da Finpartner — posso mostrar?",
+    "followup_count": 0
+  },
+  "geral@gestaototal.pt": {
+    "name": "Gestão Total",
+    "sent_at": "2026-03-16T15:52:19.485166",
+    "template": "contabilidade",
+    "status": "sent",
+    "original_subject": "AI automatiza reconciliação e relatórios da Gestão Total — posso mostrar?",
+    "followup_count": 0
+  },
+  "info@novatax.pt": {
+    "name": "NovaTax",
+    "sent_at": "2026-03-16T15:52:24.853740",
+    "template": "contabilidade",
+    "status": "sent",
+    "original_subject": "AI automatiza reconciliação e relatórios da NovaTax — posso mostrar?",
+    "followup_count": 0
+  },
+  "geral@accounting4u.pt": {
+    "name": "Accounting4u",
+    "sent_at": "2026-03-16T15:52:30.102936",
+    "template": "contabilidade",
+    "status": "sent",
+    "original_subject": "AI automatiza reconciliação e relatórios da Accounting4u — posso mostrar?",
+    "followup_count": 0
+  },
+  "contacto@numera.pt": {
+    "name": "Numera",
+    "sent_at": "2026-03-16T15:52:35.849869",
+    "template": "contabilidade",
+    "status": "sent",
+    "original_subject": "AI automatiza reconciliação e relatórios da Numera — posso mostrar?",
+    "followup_count": 0
+  },
+  "geral@clinicadaavenida.pt": {
+    "name": "Clínica da Avenida",
+    "sent_at": "2026-03-16T15:52:53.617813",
+    "template": "clinica",
+    "status": "sent",
+    "original_subject": "Automatize agendamentos e follow-ups da Clínica da Avenida com AI",
+    "followup_count": 0
+  },
+  "info@clinicadomarques.pt": {
+    "name": "Clínica do Marquês",
+    "sent_at": "2026-03-16T15:52:59.048519",
+    "template": "clinica",
+    "status": "sent",
+    "original_subject": "Automatize agendamentos e follow-ups da Clínica do Marquês com AI",
+    "followup_count": 0
+  },
+  "geral@medcenter.pt": {
+    "name": "MedCenter",
+    "sent_at": "2026-03-16T15:53:05.111280",
+    "template": "clinica",
+    "status": "sent",
+    "original_subject": "Automatize agendamentos e follow-ups da MedCenter com AI",
+    "followup_count": 0
+  },
+  "info@cuf.pt": {
+    "name": "CUF Descobertas",
+    "sent_at": "2026-03-16T15:53:10.683202",
+    "template": "clinica",
+    "status": "sent",
+    "original_subject": "Automatize agendamentos e follow-ups da CUF Descobertas com AI",
+    "followup_count": 0
+  },
+  "geral@clel.pt": {
+    "name": "Clínica Luso Espanhola",
+    "sent_at": "2026-03-16T15:53:15.957854",
+    "template": "clinica",
+    "status": "sent",
+    "original_subject": "Automatize agendamentos e follow-ups da Clínica Luso Espanhola com AI",
+    "followup_count": 0
+  },
+  "contacto@vitasaude.pt": {
+    "name": "VitaSaúde",
+    "sent_at": "2026-03-16T15:53:21.781748",
+    "template": "clinica",
+    "status": "sent",
+    "original_subject": "Automatize agendamentos e follow-ups da VitaSaúde com AI",
+    "followup_count": 0
+  },
+  "geral@saudeplus.pt": {
+    "name": "SaúdePlus",
+    "sent_at": "2026-03-16T15:53:27.320656",
+    "template": "clinica",
+    "status": "sent",
+    "original_subject": "Automatize agendamentos e follow-ups da SaúdePlus com AI",
+    "followup_count": 0
+  },
+  "info@clinicasaosebastiao.pt": {
+    "name": "Clínica São Sebastião",
+    "sent_at": "2026-03-16T15:53:32.667937",
+    "template": "clinica",
+    "status": "sent",
+    "original_subject": "Automatize agendamentos e follow-ups da Clínica São Sebastião com AI",
+    "followup_count": 0
+  },
+  "info@dentalcareporto.pt": {
+    "name": "DentalCare Porto",
+    "sent_at": "2026-03-16T15:53:38.317596",
+    "template": "clinica",
+    "status": "sent",
+    "original_subject": "Automatize agendamentos e follow-ups da DentalCare Porto com AI",
+    "followup_count": 0
+  },
+  "geral@fisioterapiacentral.pt": {
+    "name": "Fisioterapia Central",
+    "sent_at": "2026-03-16T15:53:43.681276",
+    "template": "clinica",
+    "status": "sent",
+    "original_subject": "Automatize agendamentos e follow-ups da Fisioterapia Central com AI",
+    "followup_count": 0
+  },
+  "lisboa@era.pt": {
+    "name": "ERA Imobiliária Lisboa",
+    "sent_at": "2026-03-16T15:54:00.074395",
+    "template": "imobiliaria",
+    "status": "sent",
+    "original_subject": "AI para responder leads e qualificar clientes da ERA Imobiliária Lisboa automaticamente",
+    "followup_count": 0
+  },
+  "collection@remax.pt": {
+    "name": "Remax Collection",
+    "sent_at": "2026-03-16T15:54:06.319043",
+    "template": "imobiliaria",
+    "status": "sent",
+    "original_subject": "AI para responder leads e qualificar clientes da Remax Collection automaticamente",
+    "followup_count": 0
+  },
+  "info@century21.pt": {
+    "name": "Century21 Portugal",
+    "sent_at": "2026-03-16T15:54:11.614214",
+    "template": "imobiliaria",
+    "status": "sent",
+    "original_subject": "AI para responder leads e qualificar clientes da Century21 Portugal automaticamente",
+    "followup_count": 0
+  },
+  "info@kwportugal.pt": {
+    "name": "KW Portugal",
+    "sent_at": "2026-03-16T15:54:16.955377",
+    "template": "imobiliaria",
+    "status": "sent",
+    "original_subject": "AI para responder leads e qualificar clientes da KW Portugal automaticamente",
+    "followup_count": 0
+  },
+  "info@portadafrente.com": {
+    "name": "Porta da Frente Christie's",
+    "sent_at": "2026-03-16T15:54:22.243266",
+    "template": "imobiliaria",
+    "status": "sent",
+    "original_subject": "AI para responder leads e qualificar clientes da Porta da Frente Christie's automaticamente",
+    "followup_count": 0
+  },
+  "portugal@savills.pt": {
+    "name": "Savills Portugal",
+    "sent_at": "2026-03-16T15:54:27.484889",
+    "template": "imobiliaria",
+    "status": "sent",
+    "original_subject": "AI para responder leads e qualificar clientes da Savills Portugal automaticamente",
+    "followup_count": 0
+  },
+  "portugal@jll.pt": {
+    "name": "JLL Portugal",
+    "sent_at": "2026-03-16T15:54:32.880175",
+    "template": "imobiliaria",
+    "status": "sent",
+    "original_subject": "AI para responder leads e qualificar clientes da JLL Portugal automaticamente",
+    "followup_count": 0
+  },
+  "info@imobiliariadochiado.pt": {
+    "name": "Imobiliária do Chiado",
+    "sent_at": "2026-03-16T15:54:38.639561",
+    "template": "imobiliaria",
+    "status": "sent",
+    "original_subject": "AI para responder leads e qualificar clientes da Imobiliária do Chiado automaticamente",
+    "followup_count": 0
+  },
+  "geral@prediallopes.pt": {
+    "name": "Predial Lopes",
+    "sent_at": "2026-03-16T15:54:44.119582",
+    "template": "imobiliaria",
+    "status": "sent",
+    "original_subject": "AI para responder leads e qualificar clientes da Predial Lopes automaticamente",
+    "followup_count": 0
+  },
+  "info@almaproperty.pt": {
+    "name": "Alma Property",
+    "sent_at": "2026-03-16T15:54:49.486926",
+    "template": "imobiliaria",
+    "status": "sent",
+    "original_subject": "AI para responder leads e qualificar clientes da Alma Property automaticamente",
+    "followup_count": 0
+  },
+  "reservas@belcanto.pt": {
+    "name": "Belcanto",
+    "sent_at": "2026-03-16T15:55:03.991823",
+    "template": "restaurant",
+    "status": "sent",
+    "original_subject": "Automatize as reservas e respostas da Belcanto com AI",
+    "followup_count": 0
+  },
+  "info@restaurantefeitoria.com": {
+    "name": "Restaurante Feitoria",
+    "sent_at": "2026-03-16T15:55:09.318268",
+    "template": "restaurant",
+    "status": "sent",
+    "original_subject": "Automatize as reservas e respostas da Restaurante Feitoria com AI",
+    "followup_count": 0
+  },
+  "reservas@opaparico.com": {
+    "name": "O Paparico",
+    "sent_at": "2026-03-16T15:55:15.352459",
+    "template": "restaurant",
+    "status": "sent",
+    "original_subject": "Automatize as reservas e respostas da O Paparico com AI",
+    "followup_count": 0
+  },
+  "geral@cantinhodoavillez.pt": {
+    "name": "Cantinho do Avillez",
+    "sent_at": "2026-03-16T15:55:20.710896",
+    "template": "restaurant",
+    "status": "sent",
+    "original_subject": "Automatize as reservas e respostas da Cantinho do Avillez com AI",
+    "followup_count": 0
+  },
+  "info@tascadochico.pt": {
+    "name": "Tasca do Chico",
+    "sent_at": "2026-03-16T15:55:26.158721",
+    "template": "restaurant",
+    "status": "sent",
+    "original_subject": "Automatize as reservas e respostas da Tasca do Chico com AI",
+    "followup_count": 0
+  },
+  "info@casadechadaboanova.pt": {
+    "name": "Casa de Chá da Boa Nova",
+    "sent_at": "2026-03-16T15:55:31.472129",
+    "template": "restaurant",
+    "status": "sent",
+    "original_subject": "Automatize as reservas e respostas da Casa de Chá da Boa Nova com AI",
+    "followup_count": 0
+  },
+  "reservas@pedrolemos.com": {
+    "name": "Restaurante Pedro Lemos",
+    "sent_at": "2026-03-16T15:55:36.946374",
+    "template": "restaurant",
+    "status": "sent",
+    "original_subject": "Automatize as reservas e respostas da Restaurante Pedro Lemos com AI",
+    "followup_count": 0
+  },
+  "reservas@solardospresuntos.com": {
+    "name": "Solar dos Presuntos",
+    "sent_at": "2026-03-16T15:55:43.541262",
+    "template": "restaurant",
+    "status": "sent",
+    "original_subject": "Automatize as reservas e respostas da Solar dos Presuntos com AI",
+    "followup_count": 0
+  },
+  "geral@cervejariaramiro.pt": {
+    "name": "Cervejaria Ramiro",
+    "sent_at": "2026-03-16T15:55:49.066462",
+    "template": "restaurant",
+    "status": "sent",
+    "original_subject": "Automatize as reservas e respostas da Cervejaria Ramiro com AI",
+    "followup_count": 0
+  },
+  "info@acevicheria.pt": {
+    "name": "A Cevicheria",
+    "sent_at": "2026-03-16T15:55:54.312252",
+    "template": "restaurant",
+    "status": "sent",
+    "original_subject": "Automatize as reservas e respostas da A Cevicheria com AI",
+    "followup_count": 0
   }
 }
