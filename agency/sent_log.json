@@ -3,120 +3,160 @@
     "name": "Vitamina",
     "sent_at": "2026-03-06T16:06:43.116144",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "geral@fluxodigital.pt": {
     "name": "Fluxo Digital",
     "sent_at": "2026-03-06T16:06:48.231227",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "geral@designyes.pt": {
     "name": "DESIGNYES",
     "sent_at": "2026-03-06T16:06:53.435017",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "geral@inovve.com": {
     "name": "Inovve",
     "sent_at": "2026-03-06T16:06:58.575075",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "geral@iamsocial.pt": {
     "name": "I AM Social",
     "sent_at": "2026-03-06T16:07:03.690654",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "digital@marketing360.pt": {
     "name": "Marketing 360",
     "sent_at": "2026-03-06T16:07:08.801373",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "hello@contagio.pt": {
-    "name": "Cont\u00e1gio",
+    "name": "Contágio",
     "sent_at": "2026-03-06T16:07:13.908193",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "hola@adauge.com": {
     "name": "ADAUGE",
     "sent_at": "2026-03-06T16:07:19.079024",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "info@tllmediasolutions.com": {
     "name": "TLL Media Solutions",
     "sent_at": "2026-03-06T16:07:24.223329",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "comercial@fluxodigital.pt": {
     "name": "Fluxo Digital Comercial",
     "sent_at": "2026-03-06T16:07:29.427461",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "info@bluelemon.pt": {
     "name": "BlueLemon",
     "sent_at": "2026-03-08T10:54:51.379981",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "contacto@agenciarock.pt": {
     "name": "Agencia Rock",
     "sent_at": "2026-03-08T10:54:56.478130",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "info@pointless.pt": {
     "name": "Pointless",
     "sent_at": "2026-03-08T10:55:01.712009",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "info@descomunal.pt": {
     "name": "Descomunal",
     "sent_at": "2026-03-08T10:55:06.808466",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "geral@comunicame.pt": {
     "name": "Comunica.me",
     "sent_at": "2026-03-08T10:55:11.912703",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "info@creathing.pt": {
     "name": "Creathing",
     "sent_at": "2026-03-08T10:55:17.070273",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "abordo@comodoromarketing.es": {
     "name": "Comodoro Marketing",
     "sent_at": "2026-03-08T10:55:22.226501",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "info@sheridan.es": {
     "name": "Agencia Sheridan",
     "sent_at": "2026-03-08T10:55:27.344709",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "info@marketingdigitalpymes.es": {
     "name": "Marketing Digital Pymes",
     "sent_at": "2026-03-08T10:55:32.452579",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   },
   "tuseoweb@tuseoweb.es": {
     "name": "TuSeoWeb",
     "sent_at": "2026-03-08T10:55:37.578364",
     "template": "agency",
-    "status": "sent"
+    "status": "sent",
+    "followup_count": 1,
+    "followup_1_at": "2026-03-16T15:43:46.227338"
   }
 }
